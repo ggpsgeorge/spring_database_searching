@@ -1,2 +1,2 @@
 Project will query a database with products of a store.
-Working in progress ...
+The queries are used with JPQL and native syntax.

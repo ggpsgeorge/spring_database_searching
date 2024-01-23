@@ -27,6 +27,7 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.findAllProducts());
     }
 
+    // JQPL 
     @GetMapping("/products/{id}")
     public ResponseEntity<Product> getProduct(@PathVariable Long id){
         return ResponseEntity.ok().body(productService.findProduct(id));
@@ -37,4 +38,18 @@ public class ProductController {
     public ResponseEntity<List<Product>> getOrderedProductsByRate() {
         return ResponseEntity.ok().body(productService.orderProductsByRate());
     }
+
+    // JPQL Search products by title with LIKE
+    // Pretending to be a search
+    @GetMapping("/products/jpql-search={title}")
+    public ResponseEntity<List<Product>> getSearchProductsByTitle(@PathVariable String title) {
+        return ResponseEntity.ok().body(productService.searchProductByTitle(title));
+    }
+
+    // Native Search products by title with LIKE
+    @GetMapping("/products/native-search={title}")
+    public ResponseEntity<List<Product>> getNativeSearchProductsByTitle(@PathVariable String title) {
+        return ResponseEntity.ok().body(productService.nativeSearchProductByTitle(title));
+    }
+
 }

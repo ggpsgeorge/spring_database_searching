@@ -21,7 +21,15 @@ public class ProductService {
         return productRepository.findProductById(id);
     }
 
-    public List<Product> orderProductsByRate(){
+    public List<Product> orderProductsByRate() {
         return productRepository.queryOrderProductsByRate();
+    }
+
+    public List<Product> searchProductByTitle(String title) {
+        return productRepository.querySearchProductsByTitle(title);
+    }
+
+    public List<Product> nativeSearchProductByTitle(String title) {
+        return productRepository.nativeSearchProductsByTitle(title);
     }
 }
