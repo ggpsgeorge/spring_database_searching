@@ -21,4 +21,7 @@ public class ProductService {
         return productRepository.findProductById(id);
     }
 
+    public List<Product> orderProductsByRate(){
+        return productRepository.queryOrderProductsByRate();
+    }
 }

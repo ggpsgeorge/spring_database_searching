@@ -32,4 +32,9 @@ public class ProductController {
         return ResponseEntity.ok().body(productService.findProduct(id));
     }
 
+    // JPQL Sorting
+    @GetMapping("/products/order-by-rate")
+    public ResponseEntity<List<Product>> getOrderedProductsByRate() {
+        return ResponseEntity.ok().body(productService.orderProductsByRate());
+    }
 }
